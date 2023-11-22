@@ -1,53 +1,51 @@
-let computerMove = 'nieznany ruch';
-let playerMove = 'nieznany ruch';
+function getMoveName(moveId){
+    if (moveId == 1) {
+        return 'kamień';
+    } else if (moveId == 2){
+        return 'papier';
+    } else if (moveId == 3){
+        return 'nożyce';
+    }
+
+    printMessage('Nie znam ruchu o id ' + moveId + '.');
+    return 'nieznany ruch';
+}
+
+function displayResult(argComputerMove, argPlayerMove){
+
+    printMessage('Ruch komputera to ' + argComputerMove + ' Twoj ruch to: ' + argPlayerMove);
+
+    // remis
+    if (argComputerMove == argPlayerMove){
+        printMessage('Remis!');
+    } 
+    //sciezka kamienia
+    if (argComputerMove == 'kamień' && argPlayerMove == 'papier'){
+        printMessage('Ty wygrywasz');
+    } else if (argComputerMove == 'kamień' && argPlayerMove == 'nożyce'){
+        printMessage('Komputer wygrywa');
+    }
+    //sciezka papieru
+    if (argComputerMove == 'papier' && argPlayerMove == 'kamień'){
+        printMessage('Komputer wygrywa');
+    } else if (argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
+        printMessage('Ty wygrywasz');
+    }
+    //sciezka nozyc
+    if (argComputerMove == 'nożyce' && argPlayerMove == 'papier'){
+        printMessage('Komputer wygrywa');
+    } else if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
+        printMessage('Ty wygrywasz');
+    }
+
+}
+
 let randomNumber = Math.floor(Math.random() * 3 + 1);
-
-//kontrola randomNumber
-console.log(randomNumber)
-
-if (randomNumber == 1) {
-    computerMove = 'kamień';
-} else if (randomNumber == 2){
-    computerMove = 'papier';
-} else if (randomNumber == 3){
-    computerMove = 'nożyce';
-}
-
+let computerMove = getMoveName(randomNumber);
 let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+let playerMove = getMoveName(playerInput);
 
-if (playerInput == 1) {
-    playerMove = 'kamień';
-} else if (playerInput == 2){
-    playerMove = 'papier';
-} else if (playerInput == 3){
-    playerMove = 'nożyce';
-}
-// remis
-if (computerMove == playerMove){
-    printMessage('Ruch komputera to ' + computerMove + ' Twoj ruch to: ' + playerMove);
-    printMessage('Remis!');
-} 
-//sciezka kamienia
-if (computerMove == 'kamień' && playerMove == 'papier'){
-    printMessage('Ruch komputera to ' + computerMove + ' Twoj ruch to: ' + playerMove);
-    printMessage('Ty wygrywasz');
-} else if (computerMove == 'kamień' && playerMove == 'nożyce'){
-    printMessage('Ruch komputera to ' + computerMove + ' Twoj ruch to: ' + playerMove);
-    printMessage('Komputer wygrywa');
-}
-//sciezka papieru
- if (computerMove == 'papier' && playerMove == 'kamień'){
-    printMessage('Ruch komputera to ' + computerMove + ' Twoj ruch to: ' + playerMove);
-    printMessage('Komputer wygrywa');
-} else if (computerMove == 'papier' && playerMove == 'nożyce'){
-    printMessage('Ruch komputera to ' + computerMove + ' Twoj ruch to: ' + playerMove);
-    printMessage('Ty wygrywasz');
-}
-//sciezka nozyc
-if (computerMove == 'nożyce' && playerMove == 'papier'){
-    printMessage('Ruch komputera to ' + computerMove + ' Twoj ruch to: ' + playerMove);
-    printMessage('Komputer wygrywa');
-} else if (computerMove == 'nożyce' && playerMove == 'kamień'){
-    printMessage('Ruch komputera to ' + computerMove + ' Twoj ruch to: ' + playerMove);
-    printMessage('Ty wygrywasz');
-}
+displayResult(computerMove, playerMove)
+
+
+
