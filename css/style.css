@@ -1,3 +1,9 @@
+/* Variables */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
+/* Global */
+/* Games */
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZS5jc3MifQ== */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3Mvc3R5bGUuc2NzcyIsInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxjQUFBO0FBQ0E7RUFDSSxzQkFBQTtBQ0NKOztBREVFLFdBQUE7QUFHQSxVQUFBIiwiZmlsZSI6InN0eWxlLmNzcyJ9 */
