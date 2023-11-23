@@ -19,20 +19,21 @@
 .score-board{
     display: flex;
     justify-content: space-evenly;
-
-    
 }
 
 .computer{
     border: 2px solid grey;
     width: 80px;
+    height: 80px;
 }
 
 .player{
     border: 2px solid grey;
     width: 80px;
+    height: 80px;
 }
 
 #buttons{
     margin: 20px 5px;
 }
+
