@@ -1,9 +1,38 @@
 /* Variables */
+
+
+/* Global */
 *, *::before, *::after {
     box-sizing: border-box;
-  }
+}
 
-  /* Global */
+.container{
+    border: 3px solid blue;
+    width: 300px;
+    text-align: center;
+    background-color: rgb(24, 178, 7);
+    margin: 50px auto;
+}
 
+/* Games */
 
-  /* Games */
+.score-board{
+    display: flex;
+    justify-content: space-evenly;
+
+    
+}
+
+.computer{
+    border: 2px solid grey;
+    width: 80px;
+}
+
+.player{
+    border: 2px solid grey;
+    width: 80px;
+}
+
+#buttons{
+    margin: 20px 5px;
+}
