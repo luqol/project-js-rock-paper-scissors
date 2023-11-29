@@ -1,6 +1,4 @@
-function playGame(playerInput){
-    clearMessages();
-    
+{
     function getMoveName(moveId){
         if (moveId == 1) {
             return 'kamień';
@@ -48,22 +46,26 @@ function playGame(playerInput){
         }
 
     }
+    function playGame(playerInput){
 
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
-    let computerMove = getMoveName(randomNumber);
-    let playerMove = getMoveName(playerInput);
+        clearMessages();
 
-    displayResult(computerMove, playerMove)
+        const randomNumber = Math.floor(Math.random() * 3 + 1);
+        
+        const computerMove = getMoveName(randomNumber)
+        const playerMove = getMoveName(playerInput);
+
+        displayResult(computerMove, playerMove)
+        printScore(score);
+
+    }
+
+    const score = [0,0];
     printScore(score);
 
+    document.getElementById('play-rock').addEventListener('click', function(){playGame(1)})
+    document.getElementById('play-paper').addEventListener('click', function(){playGame(2)})
+    document.getElementById('play-scissors').addEventListener('click', function(){playGame(3)})
+
 }
-
-let score = [0,0];
-printScore(score);
-
-document.getElementById('play-rock').addEventListener('click', function(){playGame(1)})
-document.getElementById('play-paper').addEventListener('click', function(){playGame(2)})
-document.getElementById('play-scissors').addEventListener('click', function(){playGame(3)})
-
-
 
