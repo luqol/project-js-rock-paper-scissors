@@ -1,14 +1,14 @@
-function printMessage(msg){
+const printMessage = function(msg){
 	const div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
 
-function clearMessages(){
+const clearMessages = function(){
 	document.getElementById('messages').innerHTML = '';
 }
 
-function printScore(score){
+const printScore = function (score){
 	const divPc = document.createElement('div');
 	divPc.innerHTML = score[0];
 	document.getElementById('computer-result').innerHTML = '';
