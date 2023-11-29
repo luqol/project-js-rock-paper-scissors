@@ -1,17 +1,5 @@
 {
-    function getMoveName(moveId){
-        if (moveId == 1) {
-            return 'kamień';
-        } else if (moveId == 2){
-            return 'papier';
-        } else if (moveId == 3){
-            return 'nożyce';
-        }
-
-        printMessage('Nie znam ruchu o id ' + moveId + '.');
-        return 'nieznany ruch';
-    }
-
+   
     function displayResult(argComputerMove, argPlayerMove){
 
         printMessage('Ruch komputera to ' + argComputerMove + ' Twoj ruch to: ' + argPlayerMove);
@@ -51,8 +39,19 @@
         clearMessages();
 
         const randomNumber = Math.floor(Math.random() * 3 + 1);
-        
-        const computerMove = getMoveName(randomNumber)
+        const getMoveName = function (moveId){
+            if (moveId == 1) {
+                return 'kamień';
+            } else if (moveId == 2){
+                return 'papier';
+            } else if (moveId == 3){
+                return 'nożyce';
+            }
+    
+            printMessage('Nie znam ruchu o id ' + moveId + '.');
+            return 'nieznany ruch';
+        }
+        const computerMove = getMoveName(randomNumber);
         const playerMove = getMoveName(playerInput);
 
         displayResult(computerMove, playerMove)
